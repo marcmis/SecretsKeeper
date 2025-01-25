@@ -1,0 +1,23 @@
+﻿@model SecretsKeeper.Models.Login
+
+<div class="container mt-5">
+    <h2 class="text-center">Log In</h2>
+    <form asp-action="Login" method="post" class="mt-4">
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Log In</button>
+    </form>
+    <p class="text-center mt-3">Don't have an account? <a href="/User/Register">Register</a></p>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
